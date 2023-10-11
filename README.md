@@ -107,6 +107,12 @@ curl -s "https://riddler.io/search/exportcsv?q=pld:domain.com" | grep -Po "(([\w
 curl -s "https://www.virustotal.com/ui/domains/domain.com/subdomains?limit=40" | grep -Po "((http|https):\/\/)?(([\w.-]*)\.([\w]*)\.([A-z]))\w+" | sort -u
 ```
 
+### Get Subdomains from RedHunt Labs
+> @redhuntlabs
+```bash
+curl --location 'https://reconapi.redhuntlabs.com/community/v1/domains/subdomains?domain=domain.com&page_size=10&page=1' --header 'X-BLOBR-KEY: api_key' | grep -Po "((http|https):\/\/)?(([\w.-]*)\.([\w]*)\.([A-z]))\w+" | sort -u
+```
+
 ### Get Subdomains from CertSpotter
 > @caryhooper
 ```bash
